@@ -1,1 +1,11 @@
 1. cublas.saxpy 25.63 Gflops
+
+2. cublas_sdot 
+        1024:   Performance: 0.020311
+                Diff: 3.05176e-05 1.169745219267817e-7
+        32768:  Performance； 0.660432
+                Diff: 0.00976562 1.195715044850242e-6
+        1milliom Performance: 15.615
+                 Diff 39.4688  1.508861533756403e-4
+
+3. cublas_sgemm  

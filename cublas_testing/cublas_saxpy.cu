@@ -11,7 +11,7 @@ void vector_init(float *a, int n){
 }
 
 int main(){
-    int n = 1 <<20;//1 million
+    int n = 1 <<10;//1 million
     int bytes = n *sizeof(float);
     float *h_a, *h_b, *h_c;
     float *d_a, *d_b;

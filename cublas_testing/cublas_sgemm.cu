@@ -4,6 +4,7 @@
 #include<math.h>
 #include<iostream>
 #include <climits>
+#include<stdio.h>
 
 bool verify_solution(float *a, float *b, float *c, int n){
     float temp;
@@ -81,6 +82,7 @@ int main(){
         //bool verify = verify_solution(h_a, h_b, h_c, n);
 
         std::cout<<"n= "<<n<<std::endl;
+        
         /*
         if(verify == true){
             std::cout<<"ok"<<std::endl;
@@ -89,9 +91,22 @@ int main(){
             std::cout<<"failed"<<std::endl;
         }
         */
+        
         float second = milliseconds/1e3;
         std::cout<<"milliseconds = "<<milliseconds<<std::endl;
         std::cout<<"Time = "<<second<<std::endl;
         std::cout<<"Performance = "<<2*(n/1e3)*(n/1e3)*(n/1e3)/second<<std::endl;
+        printf("\n");
+        
+        cudaFree(d_a);
+        cudaFree(d_b);
+        cudaFree(d_c);
+        free(h_a);
+        free(h_b);
+        free(h_c);
+
+        cublasDestroy(handle);
+        cudaEventDestroy(start);
+        cudaEventDestroy(stop);
     }
 }
